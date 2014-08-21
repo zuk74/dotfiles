@@ -1,0 +1,28 @@
+
+layout remove only
+layout new only
+source $HOME/.screen/only.layout
+layout autosave on
+
+layout remove split
+layout new split
+source $HOME/.screen/split.layout
+layout autosave on
+
+layout remove vsplit
+layout new vsplit
+source $HOME/.screen/vsplit.layout
+layout autosave on
+
+layout remove split3
+layout new split3
+source $HOME/.screen/split3.layout
+layout autosave on
+
+layout remove cross
+layout new cross
+source $HOME/.screen/cross.layout
+layout autosave on
+
+layout select 0
+

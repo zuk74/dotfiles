@@ -1,0 +1,12 @@
+only
+select 0
+split
+split -v
+focus
+select 1
+focus
+select 2
+split -v
+focus
+select 3
+focus

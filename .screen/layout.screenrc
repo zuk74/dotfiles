@@ -1,3 +1,7 @@
+#
+# レイアウト
+#
+source $HOME/.screen/all.layout
 
 # trigger for layout sub-commands
 bind y  eval 'command -c layout' 'layout show'
@@ -5,7 +9,10 @@ bind  eval 'command -c layout' 'layout show'
 
 # create/remove layout
 bind -c layout c eval 'layout new'    'layout show'
-bind -c layout X eval 'layout remove' 'layout show'
+bind -c layout x eval 'layout remove' 'layout show'
+
+bind -c layout s eval 'source $HOME/.screen/all.layout' 'echo "all layout"'
+#bind -c layout s eval 'source $HOME/.screen/split.layout' 'echo "all layout"'
 
 # change the current layout title or number
 bind -c layout A colon 'layout title '
