@@ -11,12 +11,12 @@ escape ^Tt
 startup_message off
 
 # スクロールバッファの最大行指定
-defscrollback 5000
+defscrollback 1000
 
 # 現在の背景色で消去する
 defbce on
 # 256色に設定
-term xterm-256color
+#term xterm-256color
 
 # viやlessを別画面で表示して抜けるときゴミを残さないように設定
 altscreen on
@@ -29,22 +29,24 @@ autodetach on
 # 画面全体の点滅をきる
 vbell off
 #シェルのタイトル
-shelltitle "$ | bash"
+shelltitle "$ |shell"
 
 # ターミナルをリサイズさせない設定
 # TERMがxtermの時
 termcapinfo xterm       'is=\E[r\E[m\E[3J\E[H\E[?7h\E[?1;4;6l'
 
+# ステータスバー表示
+backtick 0 0 0 pwd
 
-#hardstatus on
-#caption always "%{=r dg}%H[%n]: %c %{-}%`%-w%{=b bw}%n %t%{-}%+w"
-#caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
-#caption always "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %t%{= wk}%+Lw %{= wk}%=%{= gk} %y/%m/%d %c "
-caption    always         '%?%F%{= rW}%:%{= Kk}%?%2n%f%07=%t%?%P *** copy/paste mode ***%:%?%=%?%F%:%{= KK}%?%p %+p %S'
-hardstatus alwayslastline '[%S] %-w%{= rW}%n %t%{-}%+w %=screen 4.02.01'
+caption    always         '%?%F%{= rW}%:%{= rk}%?%2n%f%07=%t%?%P *** copy/paste mode ***%:%?%=%?%F%:%{= rk}%?%S'
+hardstatus alwayslastline '[%0`@%H] %-w%{= rW}%n %t%{-}%+w %=screen 4.02.01'
+
 
 #bind ^U 'encoding utf8' 'info'
 #bind ^E 'encoding eucjp' 'info'
+
+# ウィンドウリスト表示
+bind l eval windowlist -b
 
 # 画面分割キーバインド設定
 bind s  eval "split"    focus screen
@@ -61,5 +63,5 @@ bind -c resize k eval 'command -c resize' 'resize -v -1'
 bind -c resize = eval 'command -c resize' 'resize ='
 
 # レイアウト設定
-source '$HOME/.screen/layout.screenrc'
+source $HOME/.screen/layout.screenrc
 
