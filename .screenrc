@@ -47,10 +47,11 @@ hardstatus alwayslastline '[%S] %-w%{= rW}%n %t%{-}%+w %=screen 4.02.01'
 #bind ^E 'encoding eucjp' 'info'
 
 # 画面分割キーバインド設定
-bind s eval "split"    focus screen
-bind v eval "split -v" focus screen
-bind x eval remove
-bind k eval kill remove
+bind s  eval "split"    focus screen
+bind v  eval "split -v" focus screen
+bind x  eval remove
+bind k  eval kill remove
+bind  eval focus
 # 画面分割リサイズ、押しっぱなしで連続処理
 bind w eval 'command -c resize' 'echo "Resize window [key: h j k l = or <ESC>]"'
 bind -c resize h eval 'command -c resize' 'resize -h -1'
